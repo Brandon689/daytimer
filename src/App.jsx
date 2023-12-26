@@ -3,6 +3,24 @@ import React, { useState, useEffect } from 'react';
 import { format, utcToZonedTime } from 'date-fns-tz';
 import './App.css'
 
+const CountdownDigits = ({ countdown }) => {
+  const digitPairs = countdown.split(' ');
+
+  return (
+    <div className="countdown digit-number">
+      {digitPairs.map((pair, index) => (
+        <div className="countdown-block" key={index}>
+          {pair}
+          {/* {index < digitPairs.length - 1 && <span className="digit-separator">:</span>} */}
+          {index == 0 && <div className="tick">Hours</div>}
+          {index == 1 && <div className="tick">Minutes</div>}
+          {index == 2 && <div className="tick">Seconds</div>}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const App = () => {
   const [targetTime, setTargetTime] = useState(); // State to store the user's target end time
   const [hours, setHours] = useState('');
@@ -63,7 +81,10 @@ const App = () => {
     <div>
       <div>
         <div className="wrap-countdown">
-          <svg width="1594" height="561" viewBox="0 0 1594 561" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <CountdownDigits countdown={countdown} />
+          {/* <div className="countdown digit-number">{countdown}</div> */}
+        </div>
+        <svg width="1594" height="561" viewBox="0 0 1594 561" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1424_2737)">
             <rect width="1593" height="560" transform="translate(0.5 0.0195312)" fill="#FFEAD1"></rect>
             <path d="M1315.56 575.539C1198.34 538.558 937.352 506.73 762.903 462.109C571.227 413.083 265.841 304.968 -27.4385 431.068V575.539H1315.56Z" fill="#FFCD75"></path>
@@ -133,9 +154,6 @@ const App = () => {
             </clipPath>
             </defs>
           </svg>
-          <div className="countdown digit-number">{countdown}</div>
-        </div>
-        
         {targetTimeString && <div>Time until {targetTimeString}</div>}
       </div>
 

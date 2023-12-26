@@ -4,6 +4,9 @@
   padding: 2rem;
   text-align: center;
 } */
+body {
+  background-color: #444;
+}
 
 .countdown {
   position: absolute;
@@ -17,7 +20,18 @@
   top: 0;
   width: 100%;
 }
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+}
 
+.countdown .countdown-block:not(:last-child) {
+  margin-right: 42px;
+}
+
+.tick {
+  font-size: 26px;
+}
 .wrap-countdown {
   width: 1594px;
   position: relative;

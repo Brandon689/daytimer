@@ -18,7 +18,15 @@
   width: 100%;
 }
 
-.wrapCountdown {
+.wrap-countdown {
   width: 1594px;
   position: relative;
+}
+
+.digit-number {
+  font-family: Roboto,sans-serif;
+  font-size: 107px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  padding: 0 24px;
 }

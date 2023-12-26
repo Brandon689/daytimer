@@ -10,16 +10,17 @@ const App = () => {
   const [countdown, setCountdown] = useState('');
   const [targetTimeString, setTargetTimeString] = useState('');
 
-  // Function to get the local timezone and format the target date-time string
   const createTargetTimeString = (date) => {
     return format(date, "EEEE, dd MMMM yyyy 'at' HH:mm:ss '(', zzzz, ')'", {
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
     });
   };
-
+  function convertToTwoDigit(number) {
+    return number.toLocaleString('en-US', { minimumIntegerDigits: 2 });
+  }
   useEffect(() => {
     const now = new Date();
-    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0);
+    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 0);
     setTargetTime(targetDate); // Update target time
     setTargetTimeString(createTargetTimeString(targetDate)); // Format and display target time string
   }, []); 
@@ -38,10 +39,12 @@ const App = () => {
 
         // Update countdown
         const hoursLeft = Math.floor(distance / (1000 * 60 * 60) % 24);
+        console.log(hoursLeft)
+
         const minutesLeft = Math.floor(distance / (1000 * 60) % 60);
         const secondsLeft = Math.floor(distance / 1000 % 60);
 
-        setCountdown(`${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`);
+        setCountdown(`${convertToTwoDigit(hoursLeft)} ${convertToTwoDigit(minutesLeft)} ${convertToTwoDigit(secondsLeft)}`);
       }, 1000);
 
       return () => clearInterval(intervalId);
@@ -59,7 +62,7 @@ const App = () => {
   return (
     <div>
       <div>
-        <div className="wrapCountdown">
+        <div className="wrap-countdown">
           <svg width="1594" height="561" viewBox="0 0 1594 561" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1424_2737)">
             <rect width="1593" height="560" transform="translate(0.5 0.0195312)" fill="#FFEAD1"></rect>
@@ -130,7 +133,7 @@ const App = () => {
             </clipPath>
             </defs>
           </svg>
-          <div className="countdown">{countdown}</div>
+          <div className="countdown digit-number">{countdown}</div>
         </div>
         
         {targetTimeString && <div>Time until {targetTimeString}</div>}

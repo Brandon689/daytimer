@@ -4,8 +4,8 @@
   padding: 2rem;
   text-align: center;
 } */
-body {
-  background-color: #444;
+.container {
+  width: 1594px;
 }
 
 .countdown {
@@ -33,7 +33,7 @@ body {
   font-size: 26px;
 }
 .wrap-countdown {
-  width: 1594px;
+  /* width: 1594px; */
   position: relative;
 }
 
@@ -42,5 +42,16 @@ body {
   font-size: 107px;
   font-variant-numeric: tabular-nums;
   font-weight: 300;
-  padding: 0 24px;
+}
+
+
+[type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"] {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 4px;
+  font-size: 14px;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 .5em;
+  vertical-align: middle;
 }

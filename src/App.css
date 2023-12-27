@@ -34,7 +34,9 @@ label {
 .wrap-countdown {
   position: relative;
 }
-
+.target-time {
+  margin-top: 12px;
+}
 .digit-number {
   font-family: Roboto,sans-serif;
   font-size: 107px;

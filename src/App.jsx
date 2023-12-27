@@ -152,7 +152,7 @@ const App = () => {
           </clipPath>
           </defs>
         </svg>
-      {targetTimeString && <div>Time until {targetTimeString}</div>}
+      {targetTimeString && <div className="target-time">Time until {targetTimeString}</div>}
 
       <form onSubmit={handleSubmit}>
       <div className="form-input">

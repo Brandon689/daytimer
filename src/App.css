@@ -1,13 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
-.container {
-  width: 1594px;
-}
-
 .countdown {
   position: absolute;
   align-items: center;
@@ -24,7 +14,12 @@
   display: flex;
   flex-direction: column;
 }
-
+.form-input {
+  display: flex;
+}
+.form-input label:first-child {
+  margin-right: 20px;
+}
 .countdown .countdown-block:not(:last-child) {
   margin-right: 42px;
 }
@@ -33,7 +28,6 @@
   font-size: 26px;
 }
 .wrap-countdown {
-  /* width: 1594px; */
   position: relative;
 }
 
@@ -42,16 +36,4 @@
   font-size: 107px;
   font-variant-numeric: tabular-nums;
   font-weight: 300;
-}
-
-
-[type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"] {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.2);
-  border-radius: 4px;
-  font-size: 14px;
-  height: 2em;
-  line-height: 2em;
-  padding: 0 .5em;
-  vertical-align: middle;
 }

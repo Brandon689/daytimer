@@ -155,14 +155,16 @@ const App = () => {
       {targetTimeString && <div>Time until {targetTimeString}</div>}
 
       <form onSubmit={handleSubmit}>
-      <label>
-        Hour
-        <input type="number" value={hours} min="0" max="23" onChange={(e) => setHours(e.target.value)} required />
-      </label>
-      <label>
-        Minute
-        <input type="number" value={minutes} min="0" max="59" onChange={(e) => setMinutes(e.target.value)} required />
-      </label>
+      <div className="form-input">
+        <label>
+          Hour
+          <input type="number" value={hours} min="0" max="23" onChange={(e) => setHours(e.target.value)} required />
+        </label>
+        <label>
+          Minute
+          <input type="number" value={minutes} min="0" max="59" onChange={(e) => setMinutes(e.target.value)} required />
+        </label>
+      </div>
       <button type="submit">Create Countdown</button>
     </form>
 

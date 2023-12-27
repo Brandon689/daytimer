@@ -10,8 +10,7 @@ const CountdownDigits = ({ countdown }) => {
     <div className="countdown digit-number">
       {digitPairs.map((pair, index) => (
         <div className="countdown-block" key={index}>
-          {pair}
-          {/* {index < digitPairs.length - 1 && <span className="digit-separator">:</span>} */}
+          <div className="digit">{pair}</div>
           {index == 0 && <div className="time-unit">Hours</div>}
           {index == 1 && <div className="time-unit">Minutes</div>}
           {index == 2 && <div className="time-unit">Seconds</div>}

@@ -43,7 +43,7 @@ label {
   flex-basis: 130px;
 }
 .time-unit {
-  font-size: 26px;
+  font-size: 24px;
 }
 .wrap-countdown {
   position: relative;
@@ -57,7 +57,9 @@ label {
   font-variant-numeric: tabular-nums;
   font-weight: 300;
 }
-
+.digit {
+  height: 6.7rem;
+}
 button {
   background: #ea7723;
   border: none;

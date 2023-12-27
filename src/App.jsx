@@ -12,9 +12,9 @@ const CountdownDigits = ({ countdown }) => {
         <div className="countdown-block" key={index}>
           {pair}
           {/* {index < digitPairs.length - 1 && <span className="digit-separator">:</span>} */}
-          {index == 0 && <div className="tick">Hours</div>}
-          {index == 1 && <div className="tick">Minutes</div>}
-          {index == 2 && <div className="tick">Seconds</div>}
+          {index == 0 && <div className="time-unit">Hours</div>}
+          {index == 1 && <div className="time-unit">Minutes</div>}
+          {index == 2 && <div className="time-unit">Seconds</div>}
         </div>
       ))}
     </div>

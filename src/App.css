@@ -16,15 +16,18 @@
 }
 .form-input {
   display: flex;
+  margin-top: 12px;
 }
 .form-input label:first-child {
-  margin-right: 20px;
+  margin-right: 24px;
 }
 .countdown .countdown-block:not(:last-child) {
   margin-right: 42px;
 }
-
-.tick {
+label {
+  font-weight: bold;
+}
+.time-unit {
   font-size: 26px;
 }
 .wrap-countdown {
@@ -36,4 +39,9 @@
   font-size: 107px;
   font-variant-numeric: tabular-nums;
   font-weight: 300;
+}
+
+button {
+  background: #ea7723;
+  border: none;
 }

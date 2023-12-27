@@ -26,6 +26,7 @@
 }
 label {
   font-weight: bold;
+  flex-basis: 130px;
 }
 .time-unit {
   font-size: 26px;

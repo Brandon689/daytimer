@@ -22,7 +22,7 @@ const CountdownDigits = ({ countdown }) => {
 };
 
 const App = () => {
-  const [targetTime, setTargetTime] = useState(); // State to store the user's target end time
+  const [targetTime, setTargetTime] = useState();
   const [hours, setHours] = useState('');
   const [minutes, setMinutes] = useState('');
   const [countdown, setCountdown] = useState('');
@@ -38,9 +38,9 @@ const App = () => {
   }
   useEffect(() => {
     const now = new Date();
-    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 0);
-    setTargetTime(targetDate); // Update target time
-    setTargetTimeString(createTargetTimeString(targetDate)); // Format and display target time string
+    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 22, 0);
+    setTargetTime(targetDate);
+    setTargetTimeString(createTargetTimeString(targetDate));
   }, []); 
 
   useEffect(() => {
@@ -55,10 +55,7 @@ const App = () => {
           return;
         }
 
-        // Update countdown
         const hoursLeft = Math.floor(distance / (1000 * 60 * 60) % 24);
-        console.log(hoursLeft)
-
         const minutesLeft = Math.floor(distance / (1000 * 60) % 60);
         const secondsLeft = Math.floor(distance / 1000 % 60);
 
@@ -72,7 +69,7 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const now = new Date();
-    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours, 10), parseInt(minutes, 10));
+    const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(hours, 10), parseInt(minutes != '' ? minutes : '0', 10));
     setTargetTime(targetDate); // Update target time
     setTargetTimeString(createTargetTimeString(targetDate)); // Format and display target time string
   };
@@ -162,7 +159,7 @@ const App = () => {
         </label>
         <label>
           Minute
-          <input type="number" value={minutes} min="0" max="59" onChange={(e) => setMinutes(e.target.value)} required />
+          <input type="number" value={minutes} min="0" max="59" onChange={(e) => setMinutes(e.target.value)} />
         </label>
       </div>
       <button type="submit">Create Countdown</button>

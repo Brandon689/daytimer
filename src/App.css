@@ -41,9 +41,19 @@ svg {
 label {
   font-weight: bold;
   flex-basis: 130px;
+  font-size: 18px;
 }
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]), select, textarea {
+  font-size: 18px;
+  padding: 0.4rem 0.8rem;
+  height: 2.6rem;
+}
+
 .time-unit {
   font-size: 24px;
+}
+.target-time {
+  font-size: 16px;
 }
 .wrap-countdown {
   position: relative;
